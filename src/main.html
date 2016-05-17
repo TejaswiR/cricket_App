@@ -1,3 +1,21 @@
 <div class="container-fluid text-center">
   <h1>CrickBuzz</h1>
 </div>
+<div class="row" ng-controller="MainController as vm">
+ <div class="col-md-6 col-md-offset-3">
+ <table class="table table-stripped table-hover">
+   <thead>
+     <tr>
+       <th>Description</th>
+       <th>Title</th>
+     </tr>
+   </thead>
+   <tbody>
+  <tr class="data" ng-repeat= "data in vm.all_data.data">
+   <th>{{data.description}} </th>
+   <th>{{data.title}}</th>
+  </tr>
+  </tbody>
+ </table>
+   </div>
+  </div>
