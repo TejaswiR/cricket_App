@@ -8,6 +8,13 @@ $routeProvider
   controller: 'MainController'
   })
 
+.when ('/cricketdetails/:uniqId',
+  {
+    templateUrl: 'src/cricketdetails.html',
+    controller: 'CricketDetailsController',
+    controllerAs:'dc'
+  })
+
 });
 
 
@@ -33,4 +40,15 @@ vm.getData= function(){
 
   vm.getData();
 });
+
+
+angularApp.controller("CricketDetailsController",['$resource','$filter','$routeParams',
+function($resource,$filter,$routeParams){
+   var vm=this;
+   var id = $routeParams.uniqId;
+   var cricDetails = $resource('http://cricapi.com/api/cricketScore',{unique_id:id});
+   vm.cricResponse = cricDetails.get();
+   console.log(vm.cricResponse);
+
+}]);
 
