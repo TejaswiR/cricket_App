@@ -10,11 +10,12 @@
        <th>Title</th>
      </tr>
    </thead>
+   
    <tbody>
-  <tr class="data" ng-repeat= "data in vm.all_data.data">
+   <tr class="data" ng-repeat= "data in vm.all_data.data">
    <th><a href="#/cricketdetails/{{data.unique_id}}">{{data.description}}</a></th>
-   <th><a href="#">{{data.title}}</a></th>
-  </tr>
+   <th>{{data.title}}</th>
+   </tr>
   </tbody>
  </table>
    </div>
